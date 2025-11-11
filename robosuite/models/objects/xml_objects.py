@@ -4,6 +4,40 @@ from robosuite.models.objects import MujocoXMLObject
 from robosuite.utils.mjcf_utils import array_to_string, find_elements, xml_path_completion
 
 
+class MugObject(MujocoXMLObject):
+    """
+    Mug object
+    """
+
+    def __init__(self, name):
+        super().__init__(
+            xml_path_completion("objects/mug.xml"),
+            name=name,
+            joints=[dict(type="free", damping="0.0005")],
+            obj_type="all",
+            duplicate_collision_geoms=True,
+        )
+
+    @property
+    def important_sites(self):
+        """
+        Returns:
+            dict: In addition to any default sites for this object, also provides the following entries
+
+                :`'bottom'`: Name of mug bottom location site
+                :`'top'`: Name of mug top location site
+                :`'horizontal_radius'`: Name of mug horizontal radius site
+        """
+        # Get dict from super call and add to it
+        dic = super().important_sites
+        dic.update({
+            "bottom": self.naming_prefix + "bottom_site",
+            "top": self.naming_prefix + "top_site",
+            "horizontal_radius": self.naming_prefix + "horizontal_radius_site",
+        })
+        return dic
+
+
 class BottleObject(MujocoXMLObject):
     """
     Bottle object
