@@ -1,0 +1,12 @@
+# collect demo using spacemouse
+
+python robosuite/scripts/collect_human_demonstrations.py --environment MugLift --device spacemouse --directory /home/wpai/robosuite/demo
+
+# add env_data
+
+cd robomimic/robomimc/scripts
+python add_env_metadata.py --dataset /home/wpai/robosuite/demo/mug2/mug2_2.hdf5 --env_name MugLift --robot Panda
+
+# convert dataset
+
+python dataset_states_to_obs.py --dataset /home/wpai/robosuite/demo/mug3/mug3_20.hdf5 --output_name image.hdf5 --done_mode 2 --camera_names agentview --camera_height 84 --camera_width 84

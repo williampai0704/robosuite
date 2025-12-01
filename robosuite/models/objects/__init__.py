@@ -2,7 +2,12 @@ from .objects import MujocoObject, MujocoXMLObject, MujocoGeneratedObject
 from .generated_objects import CompositeBodyObject, CompositeObject, PrimitiveObject
 
 from .xml_objects import (
-    MugObject,
+    Mug1Object,
+    Mug2Object,
+    Mug3Object,
+    Mug4Object,
+    Mug5Object,
+    Bucket1Object,
     BottleObject,
     CanObject,
     LemonObject,

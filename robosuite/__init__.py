@@ -12,7 +12,11 @@ from robosuite.environments.base import make
 
 # Manipulation environments
 from robosuite.environments.manipulation.lift import Lift
-from robosuite.environments.manipulation.mug_lift import MugLift
+from robosuite.environments.manipulation.mug_lift_1 import MugLift_1
+from robosuite.environments.manipulation.mug_lift_2 import MugLift_2
+from robosuite.environments.manipulation.mug_lift_3 import MugLift_3
+from robosuite.environments.manipulation.mug_lift_4 import MugLift_4
+from robosuite.environments.manipulation.mug_lift_5 import MugLift_5
 from robosuite.environments.manipulation.stack import Stack
 from robosuite.environments.manipulation.nut_assembly import NutAssembly
 from robosuite.environments.manipulation.pick_place import PickPlace

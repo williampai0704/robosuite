@@ -853,3 +853,18 @@ def get_ids(sim, elements, element_type="geom", inplace=False):
         elements = [get_ids(sim=sim, elements=ele, element_type=element_type, inplace=True) for ele in elements]
 
     return elements
+
+
+def postprocess_model_xml(xml_str):
+    """
+    Postprocess model XML string.
+    This function was removed in robosuite 1.3+ but is still used by robomimic 0.2.0.
+    Added back for compatibility.
+    
+    Args:
+        xml_str (str): Mujoco XML string
+        
+    Returns:
+        str: Postprocessed XML string (currently just returns input unchanged)
+    """
+    return xml_str
