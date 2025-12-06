@@ -410,3 +410,6 @@ class MugLift_4(SingleArmEnv):
         # mug is higher than the table top above a margin
         return mug_height > table_height + 0.10
 
+    def check_success(self):
+        """Public wrapper for _check_success()"""
+        return self._check_success()
